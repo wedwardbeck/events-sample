@@ -98,7 +98,7 @@
             tag="nuxt-link"
             :to="{ name: 'auth-register' }"
             type="is-link"
-            class="button is-light"
+            class="button is-primary is-inverted"
           >
             Sign Up
           </b-button>
@@ -106,7 +106,7 @@
             tag="nuxt-link"
             :to="{ name: 'auth-login' }"
             type="is-link"
-            class="button is-light"
+            class="button is-light is-primary"
           >
             Log in
           </b-button>

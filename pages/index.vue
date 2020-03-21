@@ -3,16 +3,17 @@
     <div class="columns is-mobile">
       <card
         title="Free"
-        icon="github-circle"
+        pack="fab"
+        icon="github"
       >
         Open source on <a href="https://github.com/buefy/buefy">
           GitHub
         </a>
       </card>
-
       <card
         title="Responsive"
-        icon="cellphone-link"
+        pack="fas"
+        icon="desktop"
       >
         <b class="has-text-grey">
           Every
@@ -21,7 +22,8 @@
 
       <card
         title="Modern"
-        icon="alert-decagram"
+        pack="fas"
+        icon="glass-cheers"
       >
         Built with <a href="https://vuejs.org/">
           Vue.js
@@ -32,7 +34,8 @@
 
       <card
         title="Lightweight"
-        icon="arrange-bring-to-front"
+        pack="fas"
+        icon="balance-scale"
       >
         No other internal dependency
       </card>

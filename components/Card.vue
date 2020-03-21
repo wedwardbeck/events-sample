@@ -9,6 +9,7 @@
       <div class="card-content">
         <div class="content has-text-centered">
           <b-icon
+            :pack="pack"
             :icon="icon"
             size="is-large"
             type="is-primary"
@@ -30,6 +31,10 @@
 export default {
   props: {
     title: {
+      type: String,
+      required: true
+    },
+    pack: {
       type: String,
       required: true
     },

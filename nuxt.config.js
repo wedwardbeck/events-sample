@@ -31,7 +31,7 @@ export default {
   */
   plugins: [
     '~/plugins/fontawesome.js',
-    // '~/plugins/buefy.js',
+    '~/plugins/buefy.js',
     '~/plugins/vue-date-fns.js',
     '~/plugins/vuelidate.js',
     '~/plugins/axios.js',
@@ -50,11 +50,16 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-buefy',
+    // 'nuxt-buefy',
     'nuxt-fontawesome',
     '@nuxtjs/auth',
     'vue-sweetalert2/nuxt'
   ],
+  buefy: {
+    materialDesignIcons: false,
+    defaultIconPack: 'fas',
+    defaultIconComponent: 'font-awesome-icon'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

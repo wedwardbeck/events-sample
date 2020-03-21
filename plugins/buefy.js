@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Buefy from 'buefy'
 // import { Button, Input, Icon, Field, Navbar, Select, Table } from 'buefy'
 import 'buefy/dist/buefy.css'
+import 'assets/main.sass'
 
 Vue.use(Buefy, {
     defaultIconPack: 'fas',
