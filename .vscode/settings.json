@@ -1,0 +1,27 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "files.trimTrailingWhitespace": true
+  "eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  "vue"
+  ],
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "javascript.preferences.quoteStyle": "double",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  // "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatterOptions": {
+	"prettier": {
+		"singleQuote": false,
+		"semi": false,
+		"stylelintIntegration": true,
+    "eslintIntegration": true,
+    "indent": false
+	}
+},
+  "editor.defaultFormatter": "octref.vetur"
+}

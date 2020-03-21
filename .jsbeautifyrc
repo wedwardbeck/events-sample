@@ -1,0 +1,13 @@
+{
+    "end_with_newline": true,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "html": {
+        "js": {
+            "end_with_newline": true,
+            "space_in_paren": true
+        },
+        "css": {
+            "end_with_newline": false
+        }
+    }
+}
