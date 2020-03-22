@@ -18,7 +18,7 @@ module.exports = {
         "one-var": "off",
         "no-extra-semi": "off",
         "indent": "off",
-    
+
         "import/first": "off",
         "import/named": "error",
         "import/namespace": "error",
@@ -35,6 +35,7 @@ module.exports = {
         "vue/require-prop-types": "off",
         'vue/multiline-html-element-content-newline': 'warn',
         "no-unused-vars": "warn",
+        "vue/no-unused-components": "warn",
         "vue/script-indent": "off",
     }
 };

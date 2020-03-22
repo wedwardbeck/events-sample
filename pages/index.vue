@@ -1,5 +1,48 @@
 <template>
   <section class="section">
+    <div class="level">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Events</p>
+          <p class="title">3,456</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">This Week</p>
+          <p class="title">123</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Followers</p>
+          <p class="title">456K</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Likes</p>
+          <p class="title">789</p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-multiline is-desktop">
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+      <core-event-card />
+    </div>
     <div class="columns is-mobile">
       <card
         title="Free"
@@ -45,13 +88,15 @@
 
 <script>
 import Card from '~/components/Card'
+import CoreEventCard from '~/components/UI/CoreEventCard'
 
 export default {
   name: 'HomePage',
   auth: false,
 
   components: {
-    Card
+    Card,
+    CoreEventCard
   }
 }
 </script>
