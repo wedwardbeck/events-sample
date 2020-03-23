@@ -18,10 +18,10 @@
               <label class="label">Username</label>
               <div class="control">
                 <input
+                  v-model="username"
                   type="text"
                   class="input"
                   name="username"
-                  v-model="username"
                   required
                 >
               </div>

@@ -18,7 +18,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#007399' },
   /*
   ** Global CSS
   */
@@ -36,6 +36,8 @@ export default {
     '~/plugins/vuelidate.js',
     '~/plugins/axios.js',
     '~/plugins/logrocket.js',
+    '~/plugins/v-lazy-image.js',
+    // '~/plugins/perftest.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -107,6 +109,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   analyze: true,
     extend (config, ctx) {
     }
   }

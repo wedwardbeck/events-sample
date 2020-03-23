@@ -2,8 +2,8 @@
   <div>
     <TheNavbar />
 
-    <section class="main-content columns">
-      <div class="container column is-12">
+    <section class="main-content columns has-background-light">
+      <div class="container column is-12 ">
         <nuxt />
       </div>
     </section>
@@ -35,3 +35,15 @@ export default {
   }
 }
 </script>
+<style lang="css">
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+</style>
