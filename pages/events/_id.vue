@@ -1,28 +1,43 @@
 <template>
   <div>
-    {{ event.title }}ff
-    {{ event.subTitle }}ff
-    <core-event-card
-      :id="event.id"
-      :key="event.id"
-      :title="event.title"
-      :subTitle="event.subTitle"
-      :imageURL="event.imageURL"
-      :locationName="event.locationName"
-      :address1="event.address1"
-      :address2="event.address2"
-      :city="event.city"
-      :region="event.region"
-      :postcode="event.postcode"
-      :country="event.country"
-      :phone="event.phone"
-      :email="event.email"
-    />
+    <p class="title">
+      {{ event.title }}
+    </p>
+    <p class="sub-title">
+      {{ event.subTitle }}
+    </p>
+    <div class="column column is-one-third is-marginless">
+      <v-lazy-image :src="event.imageURL" />
+    </div>
+    <span class=" columns is-mobile ">
+      <div class="column is-1 p-tb-icon">
+        <b-icon
+          pack="fas"
+          icon="map-marker-alt"
+          size="is-small"
+        />
+      </div>
+      <div class="column pull-left p-tb-min p-l-min">
+        {{ event.locationName }}
+        <br>
+        <span v-if="event.address1">
+          {{ event.address1 }}
+          <span v-if="event.address2">, {{ event.address2 }}</span>
+          <br>
+        </span>
+        <span v-if="event.city">{{ event.city }}, </span>
+        {{ event.region }} {{ event.postcode }} {{ event.country }}
+      </div>
+    </span>
+    {{ event.phone }}
+    {{ event.email }}
+    <p>
+      {{ event.eventStartDate | FormatDate('d MMM yyyy') }}
+    </p>
   </div>
 </template>
 
 <script>
-import CoreEventCard from '~/components/UI/CoreEventCard'
 
 export default {
   name: 'EventDetail',
@@ -30,10 +45,9 @@ export default {
   transition: "default",
 
   components: {
-    CoreEventCard
   },
   async fetch({ store, params }) {
-    await store.dispatch('vendors/fetchVendor', params.id)
+    await store.dispatch('events/fetchEvent', params.id)
   },
   data() {
     return {
@@ -41,10 +55,10 @@ export default {
     }
   },
   computed: {
-    vendor() {
-      return this.$store.state.vendors.all.find(vendor => vendor.id === Number(this.id))
+    event() {
+      return this.$store.state.events.events.find(event => event.id === Number(this.id))
     }
-  }  
+  }
 }
 </script>
 

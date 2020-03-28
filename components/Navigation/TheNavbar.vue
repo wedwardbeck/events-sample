@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="is-dark">
+  <b-navbar type="is-dark is-fixed-top">
     <template slot="brand">
       <b-navbar-item
         tag="nuxt-link"

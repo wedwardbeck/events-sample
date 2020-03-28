@@ -3,27 +3,38 @@
     <nuxt-link :to="{ name: 'events-id', params: { id:id } }">
       <div class="card bm--card-equal-height">
         <div class="column card-content ">
-          <div class="columns m-b-none">
+          <div class="columns m-b-min">
             <div class="column column is-three-fifths is-marginless">
               <v-lazy-image :src="imageURL" />
-              <!-- <v-lazy-image src="https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ" /> -->
             </div>
             <div class="column">
-              <p class="title">
-                <b-icon
-                  pack="fas"
-                  icon="flag"
-                  size="is-small"
-                />
-                19 Apr
+              <p
+                v-if="eventStartDate"
+                class="subtitle is-6 is-italic "
+              >
+                Event Date
               </p>
-              <p class="sub-title">
-                <b-icon
-                  pack="fas"
-                  icon="flag"
-                  size="is-small"
-                />
-                12 Apr
+              <p class="title is-5 m-b-min">
+                {{ eventStartDate | FormatDate('d MMM yyyy') }}
+              </p>
+              <p class="subtitle is-7">
+                {{ eventStartDate | FromNow() }}
+              </p>
+              <hr
+                v-if="registrationStartDate"
+                class="is-marginless"
+              >
+              <p
+                v-if="registrationStartDate"
+                class="subtitle is-6 is-italic "
+              >
+                Registration
+              </p>
+              <p class="title is-5">
+                {{ registrationStartDate | FormatDate('d MMM yyyy') }}
+              </p>
+              <p class="subtitle is-7">
+                {{ registrationStartDate | FromNow() }}
               </p>
             </div>
           </div>
@@ -46,7 +57,7 @@
                       size="is-small"
                     />
                   </div>
-                  <div class="column pull-left p-tb-min">
+                  <div class="column pull-left p-tb-min p-l-min">
                     {{ locationName }}<br>
                     <span v-if="address1">{{ address1 }}<span v-if="address2">, {{ address2 }}</span><br></span>
                     <span v-if="city">{{ city }}, </span>{{ region }} {{ postcode }} {{ country }}
@@ -55,7 +66,10 @@
                 <div class="columns is-mobile is-paddingless">
                   <div class="column">
                     <span class=" columns is-mobile is-paddingless">
-                      <div class="column is-1 p-tb-icon">
+                      <div
+                        v-if="phone"
+                        class="column is-1 p-tb-icon"
+                      >
                         <b-icon
                           pack="fas"
                           icon="phone"
@@ -69,7 +83,10 @@
                   </div>
                   <div class="column">
                     <span class=" columns is-mobile is-paddingless">
-                      <div class="column is-1 p-tb-icon">
+                      <div
+                        v-if="email"
+                        class="column is-1 p-tb-icon"
+                      >
                         <b-icon
                           pack="fas"
                           icon="envelope"
@@ -92,10 +109,11 @@
 </template>
 
 <script>
+
 export default {
   props: {
     id: {
-      type: String,
+      type: Number,
       required: true
     },
     title: {
@@ -154,36 +172,37 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    eventStartDate: {
+      type: String,
+      required: false,
+      default: null
+    },
+    eventEndDate: {
+      type: String,
+      required: false,
+      default: null
+    },
+    earlyRegistrationStartDate: {
+      type: String,
+      required: false,
+      default: null
+    },
+    registrationStartDate: {
+      type: String,
+      required: false,
+      default: null
+    },
+    registrationEndDate: {
+      type: String,
+      required: false,
+      default: null
     }
+  },
+  computed: {
   }
 }
 </script>
 
 <style lang="css" scoped>
-/* .p-blr-none {
-  padding-bottom: 0.25em;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-}
-.p-t-none {
-  padding-top: 0.25em;
-}
-.p-tb-min {
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-}
-.p-tb-icon {
-  padding-top: 0.45em;
-  padding-bottom: 0.15em;
-}
-.m-b-none {
-  margin-bottom: 0em;
-}
-.v-lazy-image {
-  filter: blur(10px);
-  transition: filter 0.5s;
-}
-.v-lazy-image-loaded {
-  filter: blur(0); */
-/* } */
 </style>

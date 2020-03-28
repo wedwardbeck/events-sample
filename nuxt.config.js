@@ -32,9 +32,10 @@ export default {
   plugins: [
     '~/plugins/fontawesome.js',
     '~/plugins/buefy.js',
-    '~/plugins/vue-date-fns.js',
+    // '~/plugins/vue-date-fns.js',
     '~/plugins/vuelidate.js',
     '~/plugins/axios.js',
+    '~/plugins/date-fns.js',
     // '~/plugins/logrocket.js',
     '~/plugins/v-lazy-image.js',
     // '~/plugins/perftest.js'
@@ -45,6 +46,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
+    // '@nuxtjs/date-fns'
   ],
   /*
   ** Nuxt.js modules
@@ -67,7 +69,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // baseURL: "http://localhost:8000/api/v1/"
+    baseURL: "http://localhost:9000"
     // credentials: true
   },
   auth: {

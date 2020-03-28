@@ -32,6 +32,16 @@ export default {
         }
       ]
     }
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        class: 'has-navbar-fixed-top'
+      }
+      // bodyAttrs: {
+      // class: 'has-navbar-fixed-top'
+      // }
+    }
   }
 }
 </script>
