@@ -44,58 +44,21 @@
     </div>
     <div class="columns is-multiline is-desktop">
       <core-event-card
-        title="Test 1"
-        subTitle="yet another event"
-        imageURL="https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-        locationName="Kay Bailey Hutchison Convention Center"
-        address1="650 S Griffin St"
-        address2=""
-        city="Dallas"
-        region="TX"
-        postcode="75202"
-        country="USA"
-        phone="469-555-1212"
-        email="fsadfasfd@sdflskf.com"
-      />
-      <core-event-card
-        title="Grapplefest Dallas 2020"
-        subTitle="Adults Gi & No-Gi, Kids & Teens Gi & No-Gi Tournament April 19th, 2020!"
-        imageURL="https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-        locationName="Bonnie Yard"
-        city="Dallas"
-        region="TX"
-        postcode="75202"
-        country="USA"
-        phone="469-555-1212"
-        email="fsadfasfd@sdflskf.com"
-      />
-      <core-event-card
-        title="Grapplefest Dallas 2020"
-        subTitle="Adults Gi & No-Gi, Kids & Teens Gi & No-Gi Tournament April 19th, 2020!"
-        imageURL="https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-        locationName="Bonnie Yard"
-        address1=""
-        address2=""
-        city=""
-        region="TX"
-        postcode="75202"
-        country="USA"
-        phone=""
-        email=""
-      />
-      <core-event-card
-        title="Grapplefest Dallas 2020"
-        subTitle="Adults Gi & No-Gi, Kids & Teens Gi & No-Gi Tournament April 19th, 2020!"
-        imageURL="https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-        locationName="Bonnie Yard"
-        address1=""
-        address2=""
-        city="McKinney"
-        region="TX"
-        postcode="75202"
-        country="USA"
-        phone=""
-        email=""
+        v-for="event in events"
+        :id="event.id"
+        :key="event.id"
+        :title="event.title"
+        :subTitle="event.subTitle"
+        :imageURL="event.imageURL"
+        :locationName="event.locationName"
+        :address1="event.address1"
+        :address2="event.address2"
+        :city="event.city"
+        :region="event.region"
+        :postcode="event.postcode"
+        :country="event.country"
+        :phone="event.phone"
+        :email="event.email"
       />
     </div>
     <div class="columns is-mobile">
@@ -153,6 +116,20 @@ export default {
   components: {
     Card,
     CoreEventCard
+  },
+  // data() {
+  //   return {
+  //     // events: []
+  //   }
+  // },
+  async fetch({ store }) {
+    // dispatch action fetchAllEvents
+    await store.dispatch("events/fetchAllEvents")
+  },
+  computed: {
+    events() {
+      return this.$store.state.events.all
+    }
   }
   // props: {
   //   events: {

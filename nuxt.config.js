@@ -35,7 +35,7 @@ export default {
     '~/plugins/vue-date-fns.js',
     '~/plugins/vuelidate.js',
     '~/plugins/axios.js',
-    '~/plugins/logrocket.js',
+    // '~/plugins/logrocket.js',
     '~/plugins/v-lazy-image.js',
     // '~/plugins/perftest.js'
   ],
